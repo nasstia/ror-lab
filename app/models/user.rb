@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
     message: "invalid e-mail format" }
   validates :password, length: { in: 3..6 }
+  validates :email, uniqueness: true
 end
