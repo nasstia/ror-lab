@@ -7,4 +7,5 @@ class User < ApplicationRecord
     message: "invalid e-mail format" }
   validates :password, length: { in: 3..6 }
   validates :email, uniqueness: true
+  validates :password, :email, confirmation: true
 end
