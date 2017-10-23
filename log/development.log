@@ -2039,3 +2039,26 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 152ms (Views: 118.7ms | ActiveRecord: 4.0ms)
 
 
+Started POST "/users" for 127.0.0.1 at 2017-10-23 10:47:43 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FaKo6r8LU7EXdFZ7Xk4hZ8+LjqPvlkpssJevicUJWxxl+ljDyys3SAFjZn+O/8Mu5tcQqqw9J0Zp3D/fFvWoFA==", "user"=>{"firstname"=>"123", "lastname"=>"", "email"=>"nastia.gmail.com", "password"=>"[FILTERED]", "country"=>"", "city"=>"", "street"=>"", "homenumber"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Either :with or :without must be supplied (but not both)):
+  
+app/models/user.rb:6:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-10-23 10:48:12 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FaKo6r8LU7EXdFZ7Xk4hZ8+LjqPvlkpssJevicUJWxxl+ljDyys3SAFjZn+O/8Mu5tcQqqw9J0Zp3D/fFvWoFA==", "user"=>{"firstname"=>"123", "lastname"=>"", "email"=>"nastia.gmail.com", "password"=>"[FILTERED]", "country"=>"", "city"=>"", "street"=>"", "homenumber"=>""}, "commit"=>"Save"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 435ms (Views: 396.1ms | ActiveRecord: 1.0ms)
+
+
